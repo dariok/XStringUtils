@@ -3,7 +3,7 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:math="http://www.w3.org/2005/xpath-functions/math"
 	xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
-	xmlns:wdb="https://github.com/dariok/wdbplus"
+	xmlns:xstring = "https://github.com/dariok/XStringUtils"
 	exclude-result-prefixes="xs math xd"
 	version="3.0">
 	<xd:doc scope="stylesheet">
@@ -31,7 +31,7 @@
 				returned unaltered.</xd:p>
 		</xd:return>
 	</xd:doc>
-	<xsl:function name="wdb:substring-after" as="xs:string">
+	<xsl:function name="xstring:substring-after" as="xs:string">
 		<xsl:param name="s" as="xs:string"/>
 		<xsl:param name="c" as="xs:string"/>
 		<xsl:value-of
@@ -54,7 +54,7 @@
 				is returned unaltered.</xd:p>
 		</xd:return>
 	</xd:doc>
-	<xsl:function name="wdb:substring-before" as="xs:string">
+	<xsl:function name="xstring:substring-before" as="xs:string">
 		<xsl:param name="s" as="xs:string"/>
 		<xsl:param name="c" as="xs:string"/>
 		<xsl:value-of
@@ -77,7 +77,7 @@
 				is returned unaltered.</xd:p>
 		</xd:return>
 	</xd:doc>
-	<xsl:function name="wdb:substring-before-if-ends">
+	<xsl:function name="xstring:substring-before-if-ends">
 		<xsl:param name="s" as="xs:string"/>
 		<xsl:param name="c" as="xs:string"/>
 		<xsl:variable name="l" select="string-length($s)" />
@@ -100,7 +100,7 @@
 				position, <xd:pre>$s</xd:pre> is returned unaltered.</xd:p>
 		</xd:return>
 	</xd:doc>
-	<xsl:function name="wdb:substring-after-if-starts">
+	<xsl:function name="xstring:substring-after-if-starts">
 		<xsl:param name="s" as="xs:string" />
 		<xsl:param name="c" as="xs:string" />
 		<xsl:value-of select="if(starts-with($s, $c)) then substring-after($s, $c) else $s"/>
@@ -115,7 +115,7 @@
 			<xd:p>The text to be searched for in the string value of <xd:pre>$s</xd:pre>.</xd:p>
 		</xd:param>
 	</xd:doc>
-	<xsl:function name="wdb:substring-before-last">
+	<xsl:function name="xstring:substring-before-last">
 		<xsl:param name="s" as="xs:string" />
 		<xsl:param name="c" as="xs:string" />
 		<xsl:variable name="string" select="string-join(tokenize(normalize-space($s), $c)[not(position() = last())], $c)" />
@@ -138,7 +138,7 @@
 			<xd:p>The text to be searched for in the string value of <xd:pre>$s</xd:pre>.</xd:p>
 		</xd:param>
 	</xd:doc>
-	<xsl:function name="wdb:substring-after-last">
+	<xsl:function name="xstring:substring-after-last">
 		<xsl:param name="s" as="xs:string" />
 		<xsl:param name="c" as="xs:string" />
 		<xsl:value-of select="tokenize(normalize-space($s), $c)[last()]" />
