@@ -11,6 +11,7 @@
 			<xd:p><xd:b>Created on:</xd:b> Nov 6, 2017</xd:p>
 			<xd:p><xd:b>Author:</xd:b> dkampkaspar</xd:p>
 			<xd:p>Some advanced functions to deal with strings</xd:p>
+			<xd:p>Current version and issue tracker: https://github.com/dariok/XStringUtils</xd:p>
 		</xd:desc>
 	</xd:doc>
 	
