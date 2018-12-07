@@ -25,7 +25,7 @@ module namespace xstring = "https://github.com/dariok/XStringUtils";
 		:		<pre>fn:substring-after($s, $c)</pre>; if <pre>$c</pre> cannot be found, <pre>$s</pre> is
 		:		returned unaltered.
 	:)
-	declare function xstring:substring-after($s as xs:string, $c as xs:string) as xs:string {
+	declare function xstring:substring-after($s as xs:string?, $c as xs:string) as xs:string? {
 		if (contains($s, $c)) then substring-after($s, $c) else $s
 	};
 	
@@ -38,7 +38,7 @@ module namespace xstring = "https://github.com/dariok/XStringUtils";
 		:		<pre>fn:substring-before($s, $c)</pre>; if <pre>$c</pre> cannot be found, <pre>$s</pre>
 		:		is returned unaltered.
 		:)
-	declare function xstring:substring-before($s as xs:string, $c as xs:string) as xs:string {
+	declare function xstring:substring-before($s as xs:string?, $c as xs:string) as xs:string? {
 		if (contains($s, $c)) then substring-before($s, $c) else $s
 	};
 	
